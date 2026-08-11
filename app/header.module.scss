@@ -1,0 +1,50 @@
+.headerContainer {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li,
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      color: #ff6600;
+    }
+  }
+}
+
+.cartIcon {
+  color: #333;
+
+  svg {
+    width: 24px;
+    height: auto;
+  }
+
+  &:hover {
+    color: #ff6600;
+  }
+}

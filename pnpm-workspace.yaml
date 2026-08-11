@@ -1,0 +1,12 @@
+minimumReleaseAge: 10080
+
+minimumReleaseAgeExclude:
+  - "@upleveled/*"
+  - eslint-config-upleveled
+  - stylelint-config-upleveled
+
+onlyBuiltDependencies:
+  - esbuild
+  - unrs-resolver
+
+strictDepBuilds: true

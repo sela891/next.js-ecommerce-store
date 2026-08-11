@@ -1,0 +1,264 @@
+// Branding Variables
+$primary-orange: #ff6600;
+$text-dark: #222222;
+$text-light: #666666;
+$white: #ffffff;
+$bg-light: #f8f9fa;
+$text-color: #333333;
+
+.cartContainer {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  h1,
+  h2 {
+    color: $text-dark;
+    margin-top: 1rem;
+  }
+}
+
+.cartItems {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    color: $text-light;
+  }
+
+  .continueShopping {
+    display: inline-block;
+    margin-top: 1.2rem;
+    color: $text-light;
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    &:hover {
+      color: $primary-orange;
+    }
+  }
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid darken($bg-light, 5%);
+
+  @media (max-width: 576px) {
+    flex-wrap: wrap;
+  }
+}
+
+.itemImage {
+  flex-shrink: 0;
+
+  .cartProductImage {
+    object-fit: cover;
+    border-radius: 6px;
+    background-color: $bg-light;
+  }
+}
+
+.itemDetails {
+  flex: 1;
+
+  .itemTitle {
+    font-size: 1.1rem;
+    margin: 0 0 0.25rem 0;
+    font-weight: 600;
+
+    .productPageLink {
+      color: $text-dark;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .itemMeta {
+    font-size: 0.875rem;
+    color: $text-light;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .removeBtn {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 0.875rem;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      color: darken(#dc3545, 10%);
+    }
+  }
+}
+
+.itemQuantity {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  .quantityBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid darken($bg-light, 10%);
+    border-radius: 4px;
+    background-color: $bg-light;
+    color: $text-color;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: darken($bg-light, 8%);
+    }
+
+    &:focus {
+      outline: 1px solid $primary-orange;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  input {
+    width: 50px;
+    height: 36px;
+    padding: 0 4px;
+    border: 1px solid darken($bg-light, 10%);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: $text-dark;
+    background: $white;
+
+    /* Hide standard number input arrows */
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:focus {
+      outline: 1px solid $primary-orange;
+    }
+  }
+}
+
+.itemPrice {
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-width: 80px;
+  text-align: right;
+  color: $text-dark;
+}
+
+.cartSummary {
+  width: 320px;
+  flex-shrink: 0;
+  padding: 1.5rem;
+  background-color: $bg-light;
+  border-radius: 8px;
+  align-self: flex-start;
+
+  @media (max-width: 850px) {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  .summaryRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: $text-dark;
+
+    &.total {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-top: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid darken($bg-light, 10%);
+    margin: 1rem 0;
+  }
+
+  .checkoutBtn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: $primary-orange;
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: darken($primary-orange, 5%);
+    }
+  }
+}
+
+.addToCartBtn {
+  display: block;
+  margin: 20px auto ;
+  padding: 10px 18px;
+  width: fit-content;
+  font-size: 0.9rem;
+  background-color: #f1f1f1;
+  color: $text-dark;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-orange;
+    color: $white;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

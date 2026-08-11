@@ -1,0 +1,175 @@
+/* Variables */
+$primary-orange: #ff6600;
+$text-dark: #222;
+$text-light: #666;
+$white: #ffffff;
+$bg-light: #f9f9f9;
+
+.pageWrapper {
+  font-family: 'Inter', sans-serif;
+}
+
+.storeContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Products Grid Layout */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual Product Cards */
+.productCard {
+  background: $white;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%; // Ensures all cards in a row are equal height
+
+  &:hover {
+    border-color: $primary-orange;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.productLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; // Pushes the button to the bottom if content is short
+}
+
+.imageWrapper {
+  aspect-ratio: 1 / 1;
+  background-color: #f5f5f5;
+  overflow: hidden;
+
+  .productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+}
+
+.productCard:hover .productImage {
+  transform: scale(1.08);
+}
+
+.productInfo {
+  padding: 25px 25px 0 25px;
+  text-align: center;
+}
+
+.description {
+  padding: 10px 25px 10px 25px;
+  text-align: center;
+}
+
+.category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: $text-light;
+  margin-bottom: 8px;
+}
+
+.productTitle {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: $text-dark;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: $primary-orange;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+
+/* Single Product Page Styling & Centering Rules */
+.singleProductHero {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+}
+
+// Aligns descriptions and buttons along a unified vertical center axis
+.productContentCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Horizontally aligns items down the layout middle
+  text-align: center; // Symmetrically balances multi-line text blocks
+  max-width: 600px; // Optimizes readability for paragraphs
+  margin: 0 auto; // Centers container block relative to view
+  gap: 1.5rem; // Handles clean layout spacing between textual layers
+}
+
+/* Global Grid Action Buttons */
+.addToCartBtn {
+  display: block;
+  margin: 20px 25px 25px 25px;
+  padding: 14px;
+  background-color: #f1f1f1;
+  color: $text-dark;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $primary-orange;
+    color: $white;
+  }
+}
+
+.addToCartBtn2 {
+  display: flex !important;
+  justify-content: center !important; // Added the missing semicolon here!
+  width: 100%;
+  margin: 20px auto !important;
+
+  button,
+  input[type='button'] {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    padding: 14px;
+    background-color: #f1f1f1;
+    color: $text-dark;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $primary-orange;
+      color: $white;
+    }
+  }
+}
