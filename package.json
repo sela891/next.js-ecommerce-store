@@ -51,6 +51,11 @@
     "overrides": {
       "react": "$react",
       "react-dom": "$react-dom"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
