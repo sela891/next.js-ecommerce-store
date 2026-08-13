@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import ProductsGrid from './products-grid';
 import styles from './products.module.scss';
 
