@@ -27,6 +27,8 @@ test('combines database product data with cookie quantities', () => {
       price: 45.0,
       cat: 'Hand-Stitched',
       quantity: 3,
+      description:
+        'A timeless companion crafted with love. This classic bear is made from premium, breathable cotton and features intricate hand-stitched details that give it a unique personality. Soft, durable, and perfect for lifelong snuggles.',
       imageSlug: 'cotton-bear',
     },
   ]);
