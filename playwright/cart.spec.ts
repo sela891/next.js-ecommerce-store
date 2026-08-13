@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('navigation test', async ({ page }) => {
+test('cart test', async ({ page }) => {
   await page.goto('/');
 
   await expect(page.getByTestId('product-add-to-cart').nth(2)).toBeVisible();
@@ -14,4 +14,8 @@ test('navigation test', async ({ page }) => {
   await page.goto('/cart');
 
   await expect(page.getByTestId('product-quantity')).toBeVisible();
+
+  await page.getByRole('button', {name: 'Increase quantity'}).click();
+
+await page.getByTestId('cart-product-remove-3').click();
 });

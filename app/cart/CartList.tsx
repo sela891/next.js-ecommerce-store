@@ -13,13 +13,19 @@ type CartItem = Products & {
   quantity: number;
 };
 
-export default function CartList({ initialItems }: {
+export default function CartList({
+  initialItems,
+}: {
   initialItems: CartItem[];
 }) {
   const [cartProducts, setCartProducts] = useState(initialItems || []);
 
-  const handleQuantityChange = async (id: number, newQuantity: number | string) => {
-    const parsed = typeof newQuantity === 'number' ? newQuantity : parseInt(newQuantity, 10);
+  const handleQuantityChange = async (
+    id: number,
+    newQuantity: number | string,
+  ) => {
+    const parsed =
+      typeof newQuantity === 'number' ? newQuantity : parseInt(newQuantity, 10);
     const qty = Math.max(1, isNaN(parsed) ? 1 : parsed);
 
     setCartProducts((prevProducts) =>
@@ -74,14 +80,14 @@ export default function CartList({ initialItems }: {
             >
               <div className={styles.itemImage}>
                 <Link href={`/products/${product.id}`}>
-                <Image
-                  src={`/images/${product.imageSlug}.png`}
-                  alt={product.name}
-                  width={100}
-                  height={100}
-                  className={styles.cartProductImage}
-                />
-              </Link>
+                  <Image
+                    src={`/images/${product.imageSlug}.png`}
+                    alt={product.name}
+                    width={100}
+                    height={100}
+                    className={styles.cartProductImage}
+                  />
+                </Link>
               </div>
 
               <div className={styles.itemDetails}>
@@ -144,7 +150,7 @@ export default function CartList({ initialItems }: {
                 </button>
               </div>
 
-              <div className={styles.itemPrice}>${combinedPrice}</div>
+              <div className={styles.itemPrice}>€{combinedPrice}</div>
             </article>
           );
         })}
@@ -154,16 +160,16 @@ export default function CartList({ initialItems }: {
         <h2>Order Summary</h2>
         <div className={styles.summaryRow}>
           <span>Subtotal</span>
-          <span>${subtotal}</span>
+          <span>€{subtotal}</span>
         </div>
         <div className={styles.summaryRow}>
           <span>Shipping</span>
           <span>Calculated at checkout</span>
         </div>
         <hr />
-        <div className={`${styles.summaryRow} ${styles.total}`}>
+        <div className={`${styles.summaryRow} €{styles.total}`}>
           <span>Total</span>
-          <span data-test-id="cart-total">${subtotal}</span>
+          <span data-test-id="cart-total">€{subtotal}</span>
         </div>
         <Link
           href="/checkout"

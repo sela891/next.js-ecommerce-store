@@ -32,7 +32,7 @@ export default async function ProductsGrid() {
                 <div className={styles.productInfo}>
                   <p className={styles.category}>{product.cat}</p>
                   <h3 className={styles.productTitle}>{product.name}</h3>
-                  <p className={styles.price}>{product.price}</p>
+                  <p className={styles.price}>€{product.price.toFixed(2)}</p>
                 </div>
               </Link>
 

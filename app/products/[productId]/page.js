@@ -55,7 +55,7 @@ export default async function ProductPage(props) {
           <p className={styles.category}>{singleProduct.cat}</p>
           <h1 className={styles.productTitle}>{singleProduct.name}</h1>
           <p data-test-id="product-price" className={styles.price}>
-            {singleProduct.price}
+            €{singleProduct.price.toFixed(2)}
           </p>
           <h3> Product Details</h3>
           <p className={styles.description}>{singleProduct.description}</p>

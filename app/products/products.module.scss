@@ -24,6 +24,7 @@ $bg-light: #f9f9f9;
   @media (max-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);
   }
+
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
@@ -78,7 +79,7 @@ $bg-light: #f9f9f9;
 }
 
 .description {
-  padding: 10px 25px 10px 25px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -101,14 +102,15 @@ $bg-light: #f9f9f9;
   font-weight: 800;
   color: $primary-orange;
   margin-bottom: 0;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* Single Product Page Styling & Centering Rules */
 .singleProductHero {
   max-width: 500px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 10px;
 
   img {
     width: 100%;
@@ -125,7 +127,7 @@ $bg-light: #f9f9f9;
   text-align: center; // Symmetrically balances multi-line text blocks
   max-width: 600px; // Optimizes readability for paragraphs
   margin: 0 auto; // Centers container block relative to view
-  gap: 1.5rem; // Handles clean layout spacing between textual layers
+  gap: 0.5rem; // Handles clean layout spacing between textual layers
 }
 
 /* Global Grid Action Buttons */
@@ -148,10 +150,10 @@ $bg-light: #f9f9f9;
 }
 
 .addToCartBtn2 {
-  display: flex !important;
-  justify-content: center !important; // Added the missing semicolon here!
+  display: flex;
+  justify-content: center;
   width: 100%;
-  margin: 20px auto !important;
+  margin: 0.5px auto;
 
   button,
   input[type='button'] {

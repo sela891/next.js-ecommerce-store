@@ -122,6 +122,16 @@ export default function CheckoutPage() {
         <section className={styles.formSection}>
           <h2>Payment Details</h2>
 
+            <div className={styles.formGroup}>
+            <label htmlFor="creditCardHolder">Credit Card Holder</label>
+            <input
+              id="creditCardHolder"
+              type="text"
+              data-test-id="checkout-credit-card-holder"
+              required
+            />
+          </div>
+
           <div className={styles.formGroup}>
             <label htmlFor="creditCard">Credit Card Number</label>
             <input
