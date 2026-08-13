@@ -7,7 +7,6 @@ import styles from './cart.module.scss';
 type ProductData = {
   id: number;
   name: string;
-  price?: string | number;
   quantity?: number;
 };
 
@@ -20,12 +19,12 @@ export default function AddToCartButton({
 
   const handleCartClick = async () => {
     try {
-      setIsPending (true);
-    await createCookie({
-      id,
-      name,
-      quantity,
-    });
+      setIsPending(true);
+      await createCookie({
+        id,
+        name,
+        quantity,
+      });
     } catch (error) {
       console.error('Failed to add item to cart:', error);
     } finally {

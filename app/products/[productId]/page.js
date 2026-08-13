@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import AddtoCartButton from '../../cart/AddtoCartButton';
-import { getProductId, getProducts } from '../../database/products';
+import { getProductId } from '../../database/products';
 import styles from '../products.module.scss';
 
 export async function generateMetadata(props) {

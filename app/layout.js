@@ -1,6 +1,5 @@
 import './globals.scss';
 import { Geist, Geist_Mono } from 'next/font/google';
-import Link from 'next/link';
 import Header from './header';
 
 const geistSans = Geist({

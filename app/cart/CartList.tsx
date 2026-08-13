@@ -18,7 +18,7 @@ export default function CartList({
 }: {
   initialItems: CartItem[];
 }) {
-  const [cartProducts, setCartProducts] = useState(initialItems || []);
+  const [cartProducts, setCartProducts] = useState(initialItems);
 
   const handleQuantityChange = async (
     id: number,
@@ -47,7 +47,7 @@ export default function CartList({
   const totalAmount = calculateTotalAmount(cartProducts);
   const subtotal = totalAmount.toFixed(2);
 
-  if (!cartProducts || cartProducts.length === 0) {
+  if (cartProducts.length === 0) {
     return (
       <main className={styles.cartContainer}>
         <section className={styles.cartItems}>
@@ -70,7 +70,6 @@ export default function CartList({
           const productPrice = Number(product.price) || 0;
           const currentQuantity = Number(product.quantity) || 1;
           const combinedPrice = (productPrice * currentQuantity).toFixed(2);
-          const productLink = `/products/${product.id}`;
 
           return (
             <article

@@ -16,11 +16,8 @@
     "**/*.jsx",
     "**/*.cjs",
     "**/*.mjs",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "playwright/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "playwright",
-    "playwright-report"
-  ]
+  "exclude": ["node_modules", "playwright", "playwright-report"]
 }
