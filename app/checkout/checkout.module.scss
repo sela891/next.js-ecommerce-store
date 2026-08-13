@@ -1,5 +1,11 @@
-@import '../products/products.module.scss';
 @use 'sass:color';
+
+/* Variables */
+$primary-orange: #ff6600;
+$text-dark: #222;
+$text-light: #666;
+$white: #ffffff;
+$bg-light: #f9f9f9;
 
 .checkoutContainer {
   max-width: 700px;
