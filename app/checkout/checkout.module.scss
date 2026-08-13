@@ -93,7 +93,7 @@
     transform 0.1s ease;
 
   &:hover {
-    background-color: darken($primary-orange, 5%);
+    background-color: color.adjust($primary-orange, $lightness: -5%);
   }
 
   &:active {

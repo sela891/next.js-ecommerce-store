@@ -241,7 +241,7 @@ $bg-light: #f9f9f9;
 
     &:hover {
       transform: translateY(-3px);
-      background-color: darken($primary-orange, 5%); // Added $
+      background-color: color.adjust($primary-orange, $lightness: -5%);
     }
   }
 }
