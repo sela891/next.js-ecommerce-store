@@ -1,6 +1,6 @@
-import { config } from 'dotenv-safe';
+import { setEnvironmentVariables } from 'dotenv-safe';
 import { postgresConfig } from './app/util/config.js';
 
-config();
+setEnvironmentVariables();
 
 export default postgresConfig;

@@ -1,7 +1,7 @@
-import { config } from 'dotenv-safe';
+import { setEnvironmentVariables } from 'dotenv-safe';
 import postgres from 'postgres';
 
-config();
+setEnvironmentVariables();
 
 // This is connecting to postgres from Node.js, but connecting from Next.js check out connect.ts file
 const sql = postgres();
@@ -9,7 +9,11 @@ const sql = postgres();
 console.log(
   'Products',
   await sql`
-SELECT * FROM products `,
+    SELECT
+      *
+    FROM
+      products
+  `,
 );
 
 // Only in local environment
