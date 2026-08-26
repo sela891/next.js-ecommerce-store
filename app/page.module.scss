@@ -197,9 +197,7 @@ $bg-light: #f9f9f9;
   position: relative;
   min-height: 80vh;
 
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/toy-workshop-bg.jpg') no-repeat center center / cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   display: flex;
   flex-direction: column;
   color: $white; // Changed from white
