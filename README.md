@@ -1,3 +1,11 @@
+<img width="1453" height="788" alt="Bildschirmfoto 2026-08-26 um 21 50 48" src="https://github.com/user-attachments/assets/3ce46d5d-7386-471b-a326-f01942be224f" />
+
+
+
+<img width="1451" height="734" alt="Bildschirmfoto 2026-08-26 um 21 51 11" src="https://github.com/user-attachments/assets/b18b406c-1ac7-4226-a4cd-cd2edf30fcca" />
+
+
+
 # Next.js Ecommerce Shop Project
 
 This full-stack Next.js e-commerce application was built as part of the UpLeveled Full Stack Course to practice end-to-end web development—from database schema design to automated testing and deployment.
@@ -46,11 +54,11 @@ Open your terminal and launch `psql` as the administrator user:
 Execute the following SQL commands sequentially inside the `psql` shell:
 
 ```sql
-postgres=# CREATE DATABASE next_js_ecommerce_store_plantify;
-postgres=# CREATE USER next_js_ecommerce_store_plantify WITH ENCRYPTED PASSWORD 'next_js_ecommerce_store_plantify';
-postgres=# GRANT ALL PRIVILEGES ON DATABASE next_js_ecommerce_store_plantify TO next_js_ecommerce_store_plantify;
-postgres=# \connect next_js_ecommerce_store_plantify
-next_js_ecommerce_store_plantify=# CREATE SCHEMA next_js_ecommerce_store_plantify AUTHORIZATION next_js_ecommerce_store_plantify;
+CREATE DATABASE <database name>;
+CREATE USER <user name> WITH ENCRYPTED PASSWORD '<user password>';
+GRANT ALL PRIVILEGES ON DATABASE <database name> TO <user name>;
+\connect <database name>
+CREATE SCHEMA <schema name> AUTHORIZATION <user name>;
 ```
 
 Exit `psql` using:
@@ -99,4 +107,3 @@ Run unit/integration tests or end-to-end browser tests using the following packa
 
 This application is deployed and hosted live on **Fly.io**.
 
-> **Note:** Ensure your remote environment variables are set using `fly secrets set` prior to deploying updates.
