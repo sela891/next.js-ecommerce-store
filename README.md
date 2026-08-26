@@ -103,7 +103,7 @@ Run unit/integration tests or end-to-end browser tests using the following packa
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 This application is deployed and hosted live on **Fly.io**.
 
