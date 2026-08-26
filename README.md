@@ -10,7 +10,7 @@
 
 This full-stack Next.js e-commerce application was built as part of the UpLeveled Full Stack Course to practice end-to-end web development—from database schema design to automated testing and deployment.
 
-## 🚀 Technologies
+## Technologies
 
 * **Framework:** Next.js
 * **Database:** PostgreSQL
@@ -20,7 +20,7 @@ This full-stack Next.js e-commerce application was built as part of the UpLevele
 
 ---
 
-## 🛠️ Database Setup
+## Database Setup
 
 If you haven't installed PostgreSQL yet, follow the setup instructions in the [UpLeveled System Setup Guide](https://github.com).
 
@@ -92,7 +92,7 @@ Verify your new database credentials:
 
 ---
 
-## 🧪 Testing
+## Testing
 
 Run unit/integration tests or end-to-end browser tests using the following package scripts:
 
