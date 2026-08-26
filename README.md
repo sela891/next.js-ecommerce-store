@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Ecommerce Shop Project
 
-## Getting Started
+This full-stack Next.js e-commerce application was built as part of the UpLeveled Full Stack Course to practice end-to-end web development—from database schema design to automated testing and deployment.
 
-First, run the development server:
+## 🚀 Technologies
 
+* **Framework:** Next.js
+* **Database:** PostgreSQL
+* **Styling:** SCSS
+* **Testing:** Jest & Playwright
+* **Hosting:** Fly.io
+
+---
+
+## 🛠️ Database Setup
+
+If you haven't installed PostgreSQL yet, follow the setup instructions in the [UpLeveled System Setup Guide](https://github.com).
+
+### 1. Environment Variables
+Duplicate `.env.example` and rename it to `.env` (this file is excluded from Git):
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env
+```
+Fill in your local connection credentials and secret keys inside `.env`.
+
+### 2. Connect to PostgreSQL as Administrator
+Open your terminal and launch `psql` as the administrator user:
+
+* **Windows:**
+  ```bash
+  psql -U postgres
+  ```
+  *(Enter `postgres` if prompted for a password.)*
+
+* **macOS:**
+  ```bash
+  psql postgres
+  ```
+
+* **Linux:**
+  ```bash
+  sudo -u postgres psql
+  ```
+
+### 3. Provision Database, User, and Schema
+Execute the following SQL commands sequentially inside the `psql` shell:
+
+```sql
+postgres=# CREATE DATABASE next_js_ecommerce_store_plantify;
+postgres=# CREATE USER next_js_ecommerce_store_plantify WITH ENCRYPTED PASSWORD 'next_js_ecommerce_store_plantify';
+postgres=# GRANT ALL PRIVILEGES ON DATABASE next_js_ecommerce_store_plantify TO next_js_ecommerce_store_plantify;
+postgres=# \connect next_js_ecommerce_store_plantify
+next_js_ecommerce_store_plantify=# CREATE SCHEMA next_js_ecommerce_store_plantify AUTHORIZATION next_js_ecommerce_store_plantify;
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Exit `psql` using:
+```sql
+\q
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 4. Linux OS User Setup *(Optional / Best Practice)*
+On Linux systems, it is best practice to create a dedicated system user for each database to keep system resources isolated. Note that system passwords cannot contain the user name.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Generate a secure random password:
+   ```bash
+   openssl rand -hex 16
+   ```
+2. Create the OS user (replace `<user name>` with your database username):
+   ```bash
+   sudo adduser <user name>
+   ```
 
-## Learn More
+### 5. Reconnect to the Database
+Verify your new database credentials:
 
-To learn more about Next.js, take a look at the following resources:
+* **Windows & macOS:**
+  ```bash
+  psql -U <user name> <database name>
+  ```
+* **Linux:**
+  ```bash
+  sudo -u <user name> psql -U <user name> <database name>
+  ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧪 Testing
 
-## Deploy on Vercel
+Run unit/integration tests or end-to-end browser tests using the following package scripts:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Test Suite | Command |
+| :--- | :--- |
+| **Jest (Unit/Integration)** | `pnpm jest` |
+| **Playwright (End-to-End)** | `pnpm playwright test` |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🌐 Deployment
+
+This application is deployed and hosted live on **Fly.io**.
+
+> **Note:** Ensure your remote environment variables are set using `fly secrets set` prior to deploying updates.
