@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   experimental: {
     typedRoutes: true,
   },
+  images: {
+    // Disable image optimization on Fly.io to avoid crashes from 256MB memory limit
+    unoptimized: !process.env.VERCEL,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
