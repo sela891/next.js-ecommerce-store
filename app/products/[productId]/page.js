@@ -30,7 +30,7 @@ export default async function ProductPage(props) {
   if (!singleProduct) {
     return (
       <div className={styles.pageWrapper}>
-        <h2>Toy Not Found</h2>
+        <h1>Toy Not Found</h1>
         <p>
           We couldn't find the product you're looking for.{' '}
           <Link href="/products">Return to shop</Link>
