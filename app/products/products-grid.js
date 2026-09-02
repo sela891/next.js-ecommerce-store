@@ -29,15 +29,11 @@ export default async function ProductsGrid() {
                 </div>
                 <h3 className={styles.productTitle}>{product.name}</h3>
               </Link>
-              <Link
-                href={`/products/${product.id}`}
-                className={styles.productLink}
-              >
-                <div className={styles.productInfo}>
-                  <p className={styles.category}>{product.cat}</p>
-                  <p className={styles.price}>€{product.price.toFixed(2)}</p>
-                </div>
-              </Link>
+
+              <div className={styles.productInfo}>
+                <p className={styles.category}>{product.cat}</p>
+                <p className={styles.price}>€{product.price.toFixed(2)}</p>
+              </div>
 
               <AddtoCartButton
                 id={product.id}
