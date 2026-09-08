@@ -30,7 +30,7 @@ export default async function ProductPage(props) {
   if (!singleProduct) {
     return (
       <div className={styles.pageWrapper}>
-        <h1>Toy Not Found</h1>
+        <h3>Toy Not Found</h3>
         <p>
           We couldn't find the product you're looking for.{' '}
           <Link href="/products">Return to shop</Link>
@@ -54,8 +54,12 @@ export default async function ProductPage(props) {
         <div className={styles.productInfo}>
           <p className={styles.category}>{singleProduct.cat}</p>
           <h1 className={styles.productTitle}>{singleProduct.name}</h1>
-          <p data-test-id="product-price" className={styles.price}>
-            €{singleProduct.price.toFixed(2)}
+
+          <p className={styles.price}>
+            €
+            <span data-test-id="product-price">
+              {singleProduct.price.toFixed(2)}
+            </span>
           </p>
           <h3>Product Details</h3>
           <p className={styles.description}>{singleProduct.description}</p>
