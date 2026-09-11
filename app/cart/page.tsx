@@ -13,7 +13,7 @@ export const metadata = {
 
 export default async function CartPage() {
   // Get the cart data stored in the cookie (contains product IDs and quantities).
-  const rawCookieValue = await getCookie('cartCookies');
+  const rawCookieValue = await getCookie('cart');
   let cartItems = parseJson(rawCookieValue) || [];
 
   if (!Array.isArray(cartItems)) {
