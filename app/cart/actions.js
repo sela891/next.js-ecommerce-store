@@ -14,7 +14,7 @@ export async function createCookie(newProduct) {
   const cookieStore = await cookies();
 
   // Retrieve the current cart from the cookie and convert it into an array.
-  const rawCookieValue = await getCookie('cartCookies');
+  const rawCookieValue = await getCookie('cart');
   let productList = parseJson(rawCookieValue) || [];
 
   // Ensure the parsed cookie value is a valid array.
@@ -26,7 +26,7 @@ export async function createCookie(newProduct) {
   const updatedProducts = updateCookie(productList, newProduct);
 
   // Save the updated cart back to the cookie with site-wide scope.
-  cookieStore.set('cartCookies', JSON.stringify(updatedProducts), {
+  cookieStore.set('cart', JSON.stringify(updatedProducts), {
     path: '/',
   });
 
@@ -40,7 +40,7 @@ export async function updateCartQuantity(productId, quantity) {
   const cookieStore = await cookies();
 
   // Retrieve the current cart from the cookie.
-  const rawCookieValue = await getCookie('cartCookies');
+  const rawCookieValue = await getCookie('cart');
   let productList = parseJson(rawCookieValue) || [];
 
   if (!Array.isArray(productList)) {
@@ -53,7 +53,7 @@ export async function updateCartQuantity(productId, quantity) {
   );
 
   // Save the updated cart to the cookie.
-  cookieStore.set('cartCookies', JSON.stringify(updatedProducts), {
+  cookieStore.set('cart', JSON.stringify(updatedProducts), {
     path: '/',
   });
 
@@ -67,7 +67,7 @@ export async function removeCartItem(productId) {
   const cookieStore = await cookies();
 
   // Retrieve the current cart from the cookie.
-  const rawCookieValue = await getCookie('cartCookies');
+  const rawCookieValue = await getCookie('cart');
   if (!rawCookieValue) return;
 
   const productList = parseJson(rawCookieValue);
@@ -79,7 +79,7 @@ export async function removeCartItem(productId) {
   );
 
   // Save the updated cart to the cookie.
-  cookieStore.set('cartCookies', JSON.stringify(updatedProductList), {
+  cookieStore.set('cart', JSON.stringify(updatedProductList), {
     path: '/',
   });
 
@@ -93,6 +93,6 @@ export async function clearCartCookies() {
   const cookieStore = await cookies();
 
   // Delete the cart cookie from the browser.
-  cookieStore.delete('cartCookies');
+  cookieStore.delete('cart');
   revalidatePath('/', 'layout');
 }
