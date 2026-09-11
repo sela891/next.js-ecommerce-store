@@ -21,9 +21,7 @@ export default function AddToCartButton({
   const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(event.target.value);
 
-    if (value >= 1) {
-      setQuantity(value);
-    }
+    setQuantity(Math.max(1, value || 1));
   };
 
   const decreaseQuantity = () => {
