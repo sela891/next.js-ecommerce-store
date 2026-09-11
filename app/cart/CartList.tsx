@@ -168,7 +168,9 @@ export default function CartList({
         <hr />
         <div className={`${styles.summaryRow} €{styles.total}`}>
           <span>Total</span>
-          <span data-test-id="cart-total">€{subtotal}</span>
+          <span>
+            €<span data-test-id="cart-total">{subtotal}</span>
+          </span>
         </div>
         <Link
           href="/checkout"
