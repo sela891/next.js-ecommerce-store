@@ -71,6 +71,7 @@ export default async function ProductPage(props) {
           id={singleProduct.id}
           name={singleProduct.name}
           price={singleProduct.price}
+          showQuantity
         />
       </div>
     </div>

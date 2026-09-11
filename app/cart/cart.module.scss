@@ -268,3 +268,19 @@ $text-color: #333333;
     cursor: not-allowed;
   }
 }
+
+.productAddToCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+
+  .itemQuantity {
+    margin-bottom: 15px;
+  }
+
+  .addToCartBtn {
+    margin: 0 auto;
+  }
+}
