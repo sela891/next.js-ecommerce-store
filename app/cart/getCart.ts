@@ -8,7 +8,7 @@ type CartItem = Products & {
 };
 
 export async function getCart(): Promise<CartItem[]> {
-  const rawCookieValue = await getCookie('cartCookies');
+  const rawCookieValue = await getCookie('cart');
 
   const productList: unknown = parseJson(rawCookieValue);
 
