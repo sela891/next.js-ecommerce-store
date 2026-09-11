@@ -36,7 +36,9 @@ export default async function Header() {
                 className={styles.cartIcon}
               >
                 <FontAwesomeIcon icon={faCartShopping} />
-                <span className={styles.cartCount}>{cartCount}</span>
+                <span data-test-id="cart-count" className={styles.cartCount}>
+                  {cartCount}
+                </span>
               </Link>
             </li>
           </ul>
