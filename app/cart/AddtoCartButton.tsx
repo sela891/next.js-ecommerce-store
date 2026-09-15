@@ -69,6 +69,11 @@ export default function AddToCartButton({
             min="1"
             onChange={handleQuantityChange}
             aria-label="Quantity"
+            onKeyDown={(event) => {
+              if (event.key === '-' || event.key === 'e') {
+                event.preventDefault();
+              }
+            }}
           />
 
           <button
