@@ -19,15 +19,23 @@ export default function AddToCartButton({
   const [isPending, setIsPending] = useState(false);
 
   const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(event.target.value);
+    const value = Number(event.currentTarget.value);
 
     if (value >= 1) {
       setQuantity(value);
+    } else {
+      setQuantity(1);
     }
   };
 
   const decreaseQuantity = () => {
-    setQuantity((current) => Math.max(1, current - 1));
+    setQuantity((current) => {
+      if (current > 1) {
+        return current - 1;
+      }
+
+      return 1;
+    });
   };
 
   const increaseQuantity = () => {
@@ -69,6 +77,8 @@ export default function AddToCartButton({
             type="number"
             value={quantity}
             min="1"
+            step="1"
+            required
             onChange={handleQuantityChange}
             aria-label="Quantity"
           />
