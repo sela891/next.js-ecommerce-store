@@ -175,7 +175,7 @@ export default function CartList({
         <Link
           href="/checkout"
           className={styles.checkoutBtn}
-          data-test-id="checkout-button"
+          data-test-id="cart-checkout"
         >
           Proceed to Checkout
         </Link>
