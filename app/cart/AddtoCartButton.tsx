@@ -21,7 +21,9 @@ export default function AddToCartButton({
   const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(event.target.value);
 
-    setQuantity(Math.max(1, value || 1));
+    if (value >= 1) {
+      setQuantity(value);
+    }
   };
 
   const decreaseQuantity = () => {
@@ -69,11 +71,6 @@ export default function AddToCartButton({
             min="1"
             onChange={handleQuantityChange}
             aria-label="Quantity"
-            onKeyDown={(event) => {
-              if (event.key === '-' || event.key === 'e') {
-                event.preventDefault();
-              }
-            }}
           />
 
           <button
