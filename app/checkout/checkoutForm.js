@@ -5,35 +5,17 @@ import { clearCartCookies } from '../cart/actions';
 import styles from './checkout.module.scss';
 
 export default function CheckoutForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       await clearCartCookies();
-      setIsSubmitted(true);
+
+      window.location.href = '/thankyou';
     } catch (error) {
       console.error('Failed to clear cart storage:', error);
     }
   };
-
-  if (isSubmitted) {
-    return (
-      <main className={styles.checkoutContainer}>
-        <div className={styles.successCard}>
-          <h1>Thank You for your Order</h1>
-          <p>Your custom toys are being prepared for workshop production.</p>
-          <button
-            className={styles.confirmOrderBtn}
-            onClick={() => (window.location.href = '/products')}
-          >
-            Continue Shopping
-          </button>
-        </div>
-      </main>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className={styles.checkoutForm}>

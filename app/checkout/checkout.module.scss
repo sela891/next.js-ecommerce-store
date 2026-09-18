@@ -7,13 +7,6 @@ $text-light: #666;
 $white: #ffffff;
 $bg-light: #f9f9f9;
 
-.checkoutContainer {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  font-family: 'Inter', sans-serif;
-}
-
 .mainTitle {
   text-align: center;
   margin-bottom: 40px;
@@ -108,29 +101,7 @@ $bg-light: #f9f9f9;
   }
 }
 
-.successCard {
-  background: $white;
-  padding: 50px 35px;
-  border-radius: 24px;
-  border: 1px solid #eee;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-
-  h1 {
-    color: $text-dark;
-    margin-bottom: 15px;
-    font-size: 2rem;
-  }
-
-  p {
-    color: $text-light;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-  }
-
-  .confirmOrderBtn {
-    max-width: 280px;
-    margin: 0 auto;
-  }
+.confirmOrderBtn {
+  max-width: 280px;
+  margin: 0 auto;
 }

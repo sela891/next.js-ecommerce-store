@@ -1,0 +1,63 @@
+/* Variables */
+$primary-orange: #ff6600;
+$text-dark: #222;
+$text-light: #666;
+$white: #ffffff;
+$bg-light: #f9f9f9;
+
+.successCard {
+  background: $white;
+  padding: 50px 35px;
+  border-radius: 24px;
+  border: 1px solid #eee;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+
+  h1 {
+    color: $text-dark;
+    margin-bottom: 15px;
+    font-size: 2rem;
+  }
+
+  p {
+    color: $text-light;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+}
+.checkoutContainer {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.continueShoppingButton {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background-color: $primary-orange;
+  color: $white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+
+  &:hover {
+    // background-color: color.adjust($primary-orange, $lightness: -5%);
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+.continueShoppingButton {
+  max-width: 280px;
+  margin: 0 auto;
+}

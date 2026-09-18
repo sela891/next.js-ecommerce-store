@@ -16,7 +16,8 @@
     "**/*.jsx",
     "**/*.cjs",
     "**/*.mjs",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "app/thankyou"
   ],
   "exclude": ["node_modules", "playwright-report"]
 }
