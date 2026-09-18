@@ -1,17 +1,19 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { clearCartCookies } from '../cart/actions';
 import styles from './checkout.module.scss';
 
 export default function CheckoutForm() {
+  const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       await clearCartCookies();
 
-      window.location.href = '/thankyou';
+      router.push('/thankyou');
     } catch (error) {
       console.error('Failed to clear cart storage:', error);
     }
