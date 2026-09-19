@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styles from './thankyou.module.scss';
 
 export const metadata = {
-  title: 'Thank You',
+  title: 'Thank you for your order',
   description: 'Thank You Page',
 };
 
