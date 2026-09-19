@@ -45,7 +45,9 @@ export default function CartList({
   };
 
   const totalAmount = calculateTotalAmount(cartProducts);
-  const subtotal = totalAmount.toFixed(2);
+  const subtotal = Number.isFinite(totalAmount)
+    ? totalAmount.toFixed(2)
+    : '0.00';
 
   if (cartProducts.length === 0) {
     return (
@@ -57,6 +59,29 @@ export default function CartList({
             ← Browse Products
           </Link>
         </section>
+
+        <aside className={styles.cartSummary}>
+          <h2>Order Summary</h2>
+
+          <div className={styles.summaryRow}>
+            <span>Subtotal</span>
+            <span>€0.00</span>
+          </div>
+
+          <div className={styles.summaryRow}>
+            <span>Shipping</span>
+            <span>Calculated at checkout</span>
+          </div>
+
+          <hr />
+
+          <div className={`${styles.summaryRow} ${styles.total}`}>
+            <span>Total</span>
+            <span>
+              €<span data-test-id="cart-total">0.00</span>
+            </span>
+          </div>
+        </aside>
       </main>
     );
   }
