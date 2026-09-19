@@ -10,7 +10,7 @@ export default function ThankYouPage() {
   return (
     <main className={styles.checkoutContainer}>
       <div className={styles.successCard}>
-        <h1>Thank You for your Order</h1>
+        <h1>Thank you for your order</h1>
         <p>Your custom toys are being prepared for workshop production.</p>
 
         <Link href="/products" className={styles.continueShoppingButton}>
