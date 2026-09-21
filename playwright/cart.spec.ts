@@ -15,7 +15,7 @@ test('cart test', async ({ page }) => {
 
   await expect(page.getByTestId('product-quantity')).toBeVisible();
 
-  await page.getByRole('button', {name: 'Increase quantity'}).click();
+  await page.getByRole('button', { name: 'Increase quantity' }).click();
 
-await page.getByTestId('cart-product-remove-3').click();
+  await page.getByTestId('cart-product-remove-3').click();
 });

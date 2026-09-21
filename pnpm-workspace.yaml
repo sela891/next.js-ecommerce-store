@@ -10,3 +10,5 @@ onlyBuiltDependencies:
   - unrs-resolver
 
 strictDepBuilds: true
+allowBuilds:
+  unrs-resolver: true

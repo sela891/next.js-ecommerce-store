@@ -34,7 +34,7 @@
     "@types/react-dom": "^19.2.3",
     "esbuild-register": "3.6.0",
     "eslint": "^10.2.1",
-    "eslint-config-upleveled": "^10.0.0",
+    "eslint-config-upleveled": "^10.0.4",
     "jest": "30.0.4",
     "jest-environment-jsdom": "30.0.4",
     "libpg-query": "^17.7.3",
@@ -43,7 +43,7 @@
     "prettier-plugin-sql": "^0.20.0",
     "stylelint": "^17.8.0",
     "stylelint-config-upleveled": "^2.0.5",
-    "typescript": "^6.0.3"
+    "typescript": "6.0.3"
   },
   "packageManager": "pnpm@10.24.0",
   "pnpm": {
