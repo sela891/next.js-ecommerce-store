@@ -13,12 +13,11 @@ test('checkout test', async ({ page }) => {
 
   await page.goto('/cart');
 
-
-  await page.getByTestId('checkout-button').click();
+  await page.getByTestId('cart-checkout').click();
 
   await page.goto('/checkout');
 
-  await page.getByTestId('checkout-first-name').fill ('Max');
+  await page.getByTestId('checkout-first-name').fill('Max');
 
   await page.getByTestId('checkout-last-name').fill('Mustermann');
 
@@ -32,18 +31,15 @@ test('checkout test', async ({ page }) => {
 
   await page.getByTestId('checkout-country').fill('Musterland');
 
-    await page.getByTestId('checkout-credit-card-holder').fill ('Max Mustermann')
+  await page.getByTestId('checkout-credit-card').fill('1234 5678 9101 1200');
 
-  await page.getByTestId('checkout-credit-card').fill ('1234 5678 9101 1200')
+  await page.getByTestId('checkout-expiration-date').fill('03/28');
 
-  await page.getByTestId('checkout-expiration-date').fill ('03/28')
+  await page.getByTestId('checkout-security-code').fill('432');
 
- await page.getByTestId('checkout-security-code').fill ('432')
+  await page.getByTestId('checkout-confirm-order').click();
 
- await page.getByTestId('checkout-confirm-order').click();
-
-await expect(
-  page.getByRole('heading', { name: 'Thank You for your Order' }),
-).toBeVisible();
-
+  await expect(
+    page.getByRole('heading', { name: 'Thank You for your Order' }),
+  ).toBeVisible();
 });
