@@ -1,7 +1,6 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 import { clearCartCookies } from '../cart/actions';
 import styles from './checkout.module.scss';
 
@@ -75,15 +74,6 @@ export default function CheckoutForm() {
 
       <section className={styles.formSection}>
         <h2>Payment Details</h2>
-
-        {/*} <div className={styles.formGroup}>
-          <label htmlFor="creditCardHolder">Credit Card Holder</label>
-          <input
-            id="creditCardHolder"
-            data-test-id="checkout-credit-card-holder"
-            required
-          />
-        </div>*/}
 
         <div className={styles.formGroup}>
           <label htmlFor="creditCard">Credit Card Number</label>

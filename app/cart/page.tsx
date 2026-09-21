@@ -1,9 +1,7 @@
-import Link from 'next/link';
 import { getProductsInsecure } from '../database/products';
 import { combineProductsWithQuantity } from '../util/combineProductsWithQuantity';
 import { getCookie } from '../util/cookie';
 import { parseJson } from '../util/parsejson';
-import styles from './cart.module.scss';
 import CartList from './CartList';
 
 export const metadata = {
